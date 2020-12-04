@@ -120,3 +120,28 @@ print(f"F1: {f1_score(y_test, y_pred)}")             #F1スコア 適合率と�
 # importanceを表示する
 importance = pd.DataFrame(model.feature_importances_, index=df.columns, columns=['importance'])
 display(importance)
+
+
+
+
+## Optuna and Auto Hyperparameter tuning
+import optuna.integration.lightgbm as lgb
+from sklearn.model_selection import train_test_split
+
+# Set data as LGB
+train = lgb.Dataset(X_train, y_train)
+test  = lgb.Dataset(X_test, y_test)
+
+# Hyper-parameter search
+params = {"objective": "binary",
+          "metric": "auc"}
+
+
+lgb_trained = lgb.train(params,
+                        train, valid_sets=test,
+                        early_stopping_rounds=100)
+
+best_params = lgb_trained.params
+print("Params:     ")
+for key, value in best_params.items():
+    print(f"{key}: {value}")
