@@ -58,8 +58,6 @@ y = np.random.uniform(0, 1, 10000)
 
 
 plt.figure(figsize=(12, 8))
-inside = []
-outside = []
 for i, j in zip(x, y):
   norm = math.hypot(i, j)
   if norm<1:
@@ -79,3 +77,17 @@ number_cnt = np.arange(1, calc_times + 1)
 for i in range(10):
     p = np.random.choice(sample_array, calc_times).cumsum()
     plt.plot(p / number_cnt)
+
+#Central Limit Theorem
+def function_central_theory(N):
+    
+    sample_array = np.array([1, 2, 3, 4, 5, 6])
+    numaber_cnt = np.arange(1, N + 1) * 1.0
+ 
+    mean_array = np.array([])
+ 
+    for i in range(1000):   
+        cum_variables = np.random.choice(sample_array, N).cumsum()*1.0
+        mean_array = np.append(mean_array, cum_variables[N-1] / N)
+ 
+    plt.hist(mean_array)
