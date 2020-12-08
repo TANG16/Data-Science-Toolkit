@@ -1,4 +1,6 @@
 import numpy as np
+import sympy as sy
+import statstools
 import pandas as pd
 import matplotlib.pyplot as plt
 import sklearn.datasets
