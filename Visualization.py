@@ -25,6 +25,16 @@ axes[2].set_xlim([2, 5])
 axes[2].set_title("custom axes range");
 
 
+#Create subplots
+plt.subplot(2,1,1) # row 2 column 1 first
+x = np.random.uniform(0, 1, 1000)
+plt.hist(x)
+
+plt.subplot(2,1,2) # row 2 column 1 second
+y = np.random.uniform(0, 1, 1000)
+plt.hist(y, color="orange")
+
+
 ##Seaborn
 #Distribution Plots
 sns.distplot(tips['total_bill'])
