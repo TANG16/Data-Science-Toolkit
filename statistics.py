@@ -37,6 +37,19 @@ ax.set_zlabel('f(x, y)')
 ax.ticklabel_format(style='sci', axis='z', scilimits=(0, 0))
 
 
+# 大数の法則
+
+# 計算回数
+calc_times =1000
+# サイコロ
+sample_array = np.array([1, 2, 3, 4, 5, 6])
+number_cnt = np.arange(1, calc_times + 1)
+
+# 4つのパスを生成
+for i in range(10):
+    p = np.random.choice(sample_array, calc_times).cumsum()
+    plt.plot(p / number_cnt)
+
 #Chi-Square
 # カイ2乗分布
 # 自由度2, 10, 60に従うカイ二乗分布が生成する乱数のヒストグラム
