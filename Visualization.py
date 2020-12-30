@@ -79,4 +79,26 @@ df.plot.line(x=df1.index,y='B',figsize=(12,3),lw=1)
 df.plot.scatter(x='A',y='B')
 df.plot.box() # Can also pass a by= argument for groupby
 df.plot.hexbin(x='a',y='b',gridsize=25,cmap='Oranges')
-df.plot.density() 
+df.plot.density()
+
+
+#3D plotting 
+# Simple 3D plotting
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def f(x, y):
+  return -x*y
+  
+def f2(x, y):
+  return x**2+2*x+x*y+y**2-4*y+3
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection="3d")
+x = np.linspace(-10,10)
+y= np.linspace(-10,10)
+X, Y = np.meshgrid(x, y)
+Z = f2(X, Y)
+ax.plot_wireframe(X, Y, Z, 1)
+plt.plot(x,y, np.zeros(len(x)))
