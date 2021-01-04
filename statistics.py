@@ -37,6 +37,10 @@ ax.set_zlabel('f(x, y)')
 ax.ticklabel_format(style='sci', axis='z', scilimits=(0, 0))
 
 
+
+#Coefficient of correlation
+student_data_math.std() / student_data_math.mean() 
+
 # 大数の法則
 
 # 計算回数
@@ -69,3 +73,4 @@ plt.grid(True)
 for df, c in zip([ (6, 7), (10, 10), (20, 25)], 'bgr'):
     x = np.random.f(df[0], df[1], 1000)
     plt.hist(x, 100, color=c)
+
