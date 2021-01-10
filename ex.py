@@ -3,3 +3,7 @@ class FooClass:
 
     
     def __bar()
+
+
+
+
