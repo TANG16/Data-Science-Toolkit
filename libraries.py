@@ -3,6 +3,7 @@ import sympy as sy
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 import pandas as pd
+import pandas_profiling as pdp
 import matplotlib.pyplot as plt
 import sklearn.datasets
 import seaborn as sns
