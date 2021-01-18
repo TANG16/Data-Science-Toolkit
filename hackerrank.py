@@ -32,21 +32,6 @@ def calcMissing(readings):
     values.isnull().sum()
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     #df = pd.DataFrame({"time": split_line[0], "value": split_line[1]})
     #print(df)
     
