@@ -74,3 +74,22 @@ for df, c in zip([ (6, 7), (10, 10), (20, 25)], 'bgr'):
     x = np.random.f(df[0], df[1], 1000)
     plt.hist(x, 100, color=c)
 
+
+
+# Gaussian
+sns.distplot(df["texture_mean"], fit=norm)
+(mu, sigma) = norm.fit(df['texture_mean'])
+print( '\n mu = {:.2f} and sigma = {:.2f}\n'.format(mu, sigma))
+plt.legend(['Normal dist. ($\mu=$ {:.2f} and $\sigma=$ {:.2f} )'.format(mu, sigma)],
+            loc='best')
+plt.ylabel('Frequency')
+plt.title('"Texture mean" distribution')
+
+# #Andrews curve
+plt.subplots(figsize = (30,8))
+from pandas import plotting
+from matplotlib import cm
+
+cmap = cm.get_cmap('summer') 
+plotting.andrews_curves(df, "diagnosis", colormap = cmap)
+plt.show()
