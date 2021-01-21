@@ -113,7 +113,7 @@ y_pred = model.predict(X_test, num_iteration=result.best_iteration_)
 accuracy = sum(y_test == y_pred) / len(y_test)
 print()
 print(f"accuracy: {accuracy}")
-print(f"Precision: {precision_score(y_test, y_pred)}") #適合率 1と予測した中で実際にどれだけ1であったかの割合 ex)異常検知システムがアラートを出した回数のうち、実際に異常であった割合
+知print(f"Precision: {precision_score(y_test, y_pred)}") #適合率 1と予測した中で実際にどれだけ1であったかの割合 ex)異常検システムがアラートを出した回数のうち、実際に異常であった割合
 print(f"Recall: {recall_score(y_test, y_pred)}") #再現率 実際は1のデータのうち正しく1と予測できた割合 ex)病気の診断システムで再現率100%といった場合
 print(f"F1: {f1_score(y_test, y_pred)}")             #F1スコア 適合率と再現率の調和平均
 
