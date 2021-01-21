@@ -19,10 +19,10 @@ from fuzzywuzzy import process
 
 fuzz.ratio('geeksforgeeks', 'geeksgeeks') 
 87
-  
+
 # Exact match 
 fuzz.ratio('GeeksforGeeks', 'GeeksforGeeks')   
-  
+
 100
 fuzz.ratio('geeks for geeks', 'Geeks For Geeks ')  
 80
@@ -31,12 +31,12 @@ fuzz.ratio('geeks for geeks', 'Geeks For Geeks ')
 fuzz.partial_ratio("geeks for geeks", "geeks for geeks!") 
 100
 # Exclamation mark in second string,  
-but still partially words are same so score comes 100
-  
+# but still partially words are same so score comes 100
+
 fuzz.partial_ratio("geeks for geeks", "geeks geeks") 
 64
 # score is less because there is a extra  
-token in the middle middle of the strin
+# token in the middle middle of the strin
 
 
 #Winden the display as default
