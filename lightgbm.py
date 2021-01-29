@@ -120,7 +120,7 @@ print(f"F1: {f1_score(y_test, y_pred)}")             #F1スコア 適合率と�
 # importanceを表示する
 importance = pd.DataFrame(model.feature_importances_, index=df.columns, columns=['importance'])
 display(importance)
-importance.plot.barh()
+importance.plot.barh(figsize=(40,40))
 
 
 
@@ -145,7 +145,3 @@ best_params = lgb_trained.params
 print("Params:     ")
 for key, value in best_params.items():
     print(f"{key}: {value}")
-
-
-lgb.plot_importance(gbm)
-lgb.create_tree_diagraph(gbm)
