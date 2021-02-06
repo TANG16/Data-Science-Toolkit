@@ -4,30 +4,30 @@ class ModelExtractionCallback(object):
         self._model = None
 
     def __call__(self, env):
-        # _CVBooster の参照を保持する
+        # Keep the reference of _CVBooster 
         self._model = env.model
 
     def _assert_called_cb(self):
         if self._model is None:
-            # コールバックが呼ばれていないときは例外にする
+            # Return error when callback has not called
             raise RuntimeError('callback has not called yet')
 
     @property
     def boosters_proxy(self):
         self._assert_called_cb()
-        # Booster へのプロキシオブジェクトを返す
+        # Return proxy object to Booster
         return self._model
 
     @property
     def raw_boosters(self):
         self._assert_called_cb()
-        # Booster のリストを返す
+        # Rerun the list of Booster
         return self._model.boosters
 
     @property
     def best_iteration(self):
         self._assert_called_cb()
-        # Early stop したときの boosting round を返す
+        # Return boosting round when Early stopped
         return self._model.best_iteration
 
 
