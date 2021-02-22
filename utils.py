@@ -12,3 +12,13 @@ urllib.request.urlretrieve(data_url, data_file_name)
 zip_ref = zipfile.ZipFile(data_file_name, 'r')
 zip_ref.extractall(download_dir)
 zip_ref.close()
+
+
+# Second pattern
+import os
+from zipfile import ZipFile
+path =os.getcwd()
+path = "C:/Users/daisu/OneDrive/Desktop/nfnets-pytorch/hymenoptera_data.zip"
+with ZipFile(path, "r") as zipd:
+    zipd.extractall("/folder")
+    zipd.printdir()
