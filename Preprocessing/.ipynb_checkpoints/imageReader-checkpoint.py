@@ -32,3 +32,6 @@ class MyDataset():
 
     def __len__(self):
         return self.len
+
+if __name__ == "__main__":
+    pass
