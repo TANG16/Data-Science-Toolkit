@@ -25,3 +25,9 @@ class Dataset:
     #check if the contents of the zip file have been actually extracted
     #glob2.glob returns a list of files in a directory
     assert len(glob2.glob('*/*.csv')) > 0, f"We cannot find extracted file"
+    
+if __name__ == "__main__":
+    url = input("What is URL?")
+    
+    
+    
