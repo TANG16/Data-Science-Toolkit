@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import matplotlib.pyplot as plt
 
 class Folder():
     def __init__(self, folder):
@@ -18,7 +19,10 @@ class Folder():
         plt.figure(figsize=(12, 8))
         for index, i in enumerate(self.images):
             image = os.path.join(self.path, i)
-            x, y = int(self.len/2), int(self.len/2)
+            if self.len%2 ==0:
+                x, y = int(self.len/2), int(self.len/2)
+            else:
+                x, y = int(self.len/2) + 1, int(self.len/2)
             plt.subplot(x, y, index + 1)
             image = plt.imread(image)
             plt.imshow(image)
@@ -48,4 +52,5 @@ class Folder():
 
 if __name__ == "__main__":
     dataset = Folder("images")
+
 
